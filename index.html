@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    </head>
+    <body>
+        <div class='book-info'>
+            <table id='books'>
+                <thead>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Number of Pages</th>
+                    <th>Read?</th>
+                    
+                </thead>
+                <tbody id='table-body'>
+
+                </tbody>
+                <!-- <tr> -->
+                    <!-- <td>Test Author</td> -->
+                    <!-- <td>Test Title</td> -->
+                    <!-- <td>Test # of Pages</td> -->
+                    <!-- <td>Test Read</td> -->
+                <!-- </tr> -->
+            </table>
+        </div>
+        <div>
+            <button id='add-book-form' onclick='openForm()'>Add Book</button>
+        </div>
+        <div class='form' id='book-form'>
+            <form>
+                <label for='author'>Author</label>
+                <input type='text' name='author' placeholder="author" id='author'>
+    
+                <label for='book'>Book Title</label>                   
+                <input type='text' name='book' placeholder='title' id='title'>
+        
+                <label for='pages'>Page Count</label>
+                <input type='number' name='pages' placeholder='999' id='page-count'>
+        
+                <label for='isReadYes'>Yes</label>
+                <input type="radio" name='isRead' id='isReadYes' value=1>
+
+                <label for='isReadNo'>No</label>
+                <input type='radio' name='isRead' id='isReadNo' value=0>
+
+                <button type='button' onclick='addBookToLibrary()'>Add</button>
+                <button type='button' onclick='closeForm()'>Close</button>
+            </form>
+        </div>
+    </body>
+    <script src="library.js"></script>
+</html>

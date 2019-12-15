@@ -1,0 +1,37 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* .headings {
+    display: flex;
+    background: orange;
+    justify-content: center;
+    width: 100%;
+} */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid black;
+    /* justify-content: center; */
+}
+
+table, th, td {
+    /* width: 100%;
+    background: pink;
+    display: flex;
+    justify-content: space-between; */
+    border: 1px solid black;
+}
+
+#book-form {
+    display: none;
+}
+
+#add-book-form {
+    /* display: flex; */
+    /* justify-content: center; */
+    width: 150px;
+    height: 50px;
+}
