@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class='book-info'>
@@ -11,7 +12,7 @@
                     <th>Title</th>
                     <th>Number of Pages</th>
                     <th>Read?</th>
-                    
+                    <!-- <th>Array Number</th> -->
                 </thead>
                 <tbody id='table-body'>
 
@@ -24,28 +25,46 @@
                 <!-- </tr> -->
             </table>
         </div>
-        <div>
-            <button id='add-book-form' onclick='openForm()'>Add Book</button>
+        <div id='add-book-form'>
+            <button id='open-form' onclick='openForm()'>Add Book</button>
         </div>
-        <div class='form' id='book-form'>
+        <div class='form-hidden' id='book-form'>
             <form>
                 <label for='author'>Author</label>
-                <input type='text' name='author' placeholder="author" id='author'>
-    
+                <input type='text' name='author' placeholder="Author" id='author'>
+        
                 <label for='book'>Book Title</label>                   
-                <input type='text' name='book' placeholder='title' id='title'>
-        
+                <input type='text' name='book' placeholder='Title' id='title'>
+         
                 <label for='pages'>Page Count</label>
-                <input type='number' name='pages' placeholder='999' id='page-count'>
-        
-                <label for='isReadYes'>Yes</label>
-                <input type="radio" name='isRead' id='isReadYes' value=1>
+                <input type='number' name='pages' placeholder='# of Pages' id='page-count'>
 
-                <label for='isReadNo'>No</label>
-                <input type='radio' name='isRead' id='isReadNo' value=0>
+                <fieldset class='radio-isRead'>
+                    <legend>Have you read this?</legend>
+                        <!-- <label for='isReadYes'>Yes</label>
+                        <input type="radio" name='isRead' id='isReadYes' value=1>
+                        
+                        <label for='isReadNo'>No</label>
+                        <input type='radio' name='isRead' id='isReadNo' value=0> -->
+                        
+                        <div>
+                            <!-- <label for='isReadYes'>Yes</label> -->
+                            <input type="radio" name='isRead' id='isReadYes' value=1>
+                            <label for='isReadYes'>Yes</label>
+                        </div>
+                        <div>
+                            <!-- <label for='isReadNo'>No</label> -->
+                            <input type='radio' name='isRead' id='isReadNo' value=0>
+                            <label for='isReadNo'>No</label>
+                        </div>
+                </fieldset>
 
-                <button type='button' onclick='addBookToLibrary()'>Add</button>
-                <button type='button' onclick='closeForm()'>Close</button>
+                <div id='close-open-buttons'>
+                    <button type='button' id='add-to-lib' onclick='addBookToLibrary()'>Add</button>
+                    <button type='button' id='close-form' onclick='closeForm()'>Close</button>
+                </div>
+                <!-- <button type='button' id='add-to-lib' onclick='addBookToLibrary()'>Add</button>
+                <button type='button' id='close-form' onclick='closeForm()'>Close</button> -->
             </form>
         </div>
     </body>

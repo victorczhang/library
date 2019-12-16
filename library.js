@@ -43,11 +43,23 @@ function render() {
 }
 
 function openForm() {
-    document.getElementById('book-form').style.display = 'block';
+    // Display Form
+    if (document.getElementById('book-form').className = 'form-hidden') {
+        document.getElementById('book-form').className = 'form-visible';
+    };
+
+    // Hide Button
+    document.getElementById('open-form').style.display = 'none';
 }
 
 function closeForm() {
-    document.getElementById('book-form').style.display = 'none';
+    // Hide Form
+    if (document.getElementById('book-form').className = 'form-visible') {
+        document.getElementById('book-form').className = 'form-hidden';
+    };
+
+    // Show button
+    document.getElementById('open-form').style.display = 'block';
 }
 
 render();
