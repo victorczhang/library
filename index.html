@@ -5,24 +5,20 @@
         <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     </head>
     <body>
+        <h1 id='library-title'>MyLibrary</h1>
         <div class='book-info'>
             <table id='books'>
                 <thead>
                     <th>Author</th>
                     <th>Title</th>
-                    <th>Number of Pages</th>
+                    <th># of Pages</th>
                     <th>Read?</th>
                     <!-- <th>Array Number</th> -->
+                    <!-- <th>Delete Button</th> -->
+                    <th><button id='clear-all' onclick='clearAll()'>Clear All</button></th>
                 </thead>
                 <tbody id='table-body'>
-
                 </tbody>
-                <!-- <tr> -->
-                    <!-- <td>Test Author</td> -->
-                    <!-- <td>Test Title</td> -->
-                    <!-- <td>Test # of Pages</td> -->
-                    <!-- <td>Test Read</td> -->
-                <!-- </tr> -->
             </table>
         </div>
         <div id='add-book-form'>
@@ -31,13 +27,13 @@
         <div class='form-hidden' id='book-form'>
             <form>
                 <label for='author'>Author</label>
-                <input type='text' name='author' placeholder="Author" id='author'>
+                <input type='text' name='author' placeholder="Author" id='author' required>
         
                 <label for='book'>Book Title</label>                   
-                <input type='text' name='book' placeholder='Title' id='title'>
+                <input type='text' name='book' placeholder='Title' id='title' required>
          
                 <label for='pages'>Page Count</label>
-                <input type='number' name='pages' placeholder='# of Pages' id='page-count'>
+                <input type='number' name='pages' placeholder='# of Pages' id='page-count' onkeydown= "return event.keyCode != 69" required>
 
                 <fieldset class='radio-isRead'>
                     <legend>Have you read this?</legend>
@@ -49,12 +45,12 @@
                         
                         <div>
                             <!-- <label for='isReadYes'>Yes</label> -->
-                            <input type="radio" name='isRead' id='isReadYes' value=1>
+                            <input type="radio" name='isRead' id='isReadYes' value='Yes' required>
                             <label for='isReadYes'>Yes</label>
                         </div>
                         <div>
                             <!-- <label for='isReadNo'>No</label> -->
-                            <input type='radio' name='isRead' id='isReadNo' value=0>
+                            <input type='radio' name='isRead' id='isReadNo' value='No' required>
                             <label for='isReadNo'>No</label>
                         </div>
                 </fieldset>

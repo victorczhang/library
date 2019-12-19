@@ -18,10 +18,23 @@ table {
     /* justify-content: center; */
     margin: 0 auto;
     text-align: center;
+    border-collapse: collapse;
+    margin-top: 10px;
+    /* margin-bottom: 10px; */
+    /* margin-bottom: 10px; */
+    table-layout: fixed;
 }
 
-td {
-    border: 1px solid black;
+thead {
+    vertical-align: middle;
+}
+
+td, th {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 5px 0 5px 0;
+    /* width: 100px; */
+    /* align-content: center; */
+    /* vertical-align: middle; */
 }
 
 .form-hidden {
@@ -37,8 +50,9 @@ td {
 }
 
 .form-visible {
-    /* border: 3px solid orange; */
-    border-radius: 10px;
+    border: 1px solid rgba(15, 157, 88, .3);
+    border-radius: 5px;
+    /* border-radius: 10px; */
     /* background: lightgrey; */
 }
 
@@ -110,9 +124,68 @@ legend {
 fieldset {
     margin-top: 10px;
     margin-bottom: 20px;
-    border: 1px dotted orange;
+    border: 1px solid yellowgreen;
 }
 
 #close-open-buttons {
     padding-bottom: 15px;
+}
+
+.delButtons {
+    width: 80px;
+    height: 30px;
+    background: rgba(219, 68, 55, 1);
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 5px 0 5px 0;
+}
+
+.readStatusButton {
+    /* background: none; */
+    /* border: none; */
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    background: rgba(15, 157, 88, 1);
+    color: white;
+    font-weight: bold;
+}
+
+.unreadStatusButton {
+    /* background: none; */
+    /* border: none; */
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    background:  rgba(219, 68, 55, 1);
+    color: white;
+    font-weight: bold;
+}
+
+#clear-all {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    background:  rgba(219, 68, 55, 1);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 5px;
+
+    /* animation: wiggle .5s infinite; */
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   80% { transform: rotate(0deg); }
+   85% { transform: rotate(5deg); }
+   95% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+#library-title {
+    display: block;
+    text-align: center;
+    padding: 10px 0 10px 0;
 }

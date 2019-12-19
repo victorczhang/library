@@ -1,5 +1,5 @@
 let myLibrary = [
-    new Book('J.R.R. Tolkien', 'The Hobbit', '200', '1')
+    new Book('J.R.R. Tolkien', 'The Hobbit', '200', 'Yes')
 ];
 
 function Book(author, title, numOfPages, isRead) {
@@ -8,6 +8,24 @@ function Book(author, title, numOfPages, isRead) {
   this.title = title;
   this.numOfPages = numOfPages;
   this.isRead = isRead;
+}
+
+Book.prototype.changeReadStatus = function() {
+    // changing from not read to read
+    if (this.isRead == 'No') {
+        // console.log('Not read!');
+        this.isRead = 'Yes';
+        render();
+        // this.isRead == 1;
+        // myLibrary[i].isRead == 1;
+
+    } else if (this.isRead == 'Yes') {
+        // changing from read to not read
+        // console.log('Read!');
+        this.isRead = 'No';
+        render();
+        // myLibrary[i].isRead == 0;
+    }
 }
 
 function addBookToLibrary() {
@@ -20,6 +38,7 @@ function addBookToLibrary() {
 
     myLibrary.push(newBook);
     render();
+    clearInputs();
 }
 
 function render() {
@@ -34,12 +53,26 @@ function render() {
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
         var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
 
         cell1.innerHTML = myLibrary[i].author;
         cell2.innerHTML = myLibrary[i].title;
         cell3.innerHTML = myLibrary[i].numOfPages;
-        cell4.innerHTML = myLibrary[i].isRead;
+
+        if (myLibrary[i].isRead == 'Yes') {
+            cell4.innerHTML = `<button class=readStatusButton id=readStatusButton-${i} onclick="myLibrary[${i}].changeReadStatus()">${myLibrary[i].isRead}</button>`;
+        } else if (myLibrary[i].isRead == 'No') {
+            cell4.innerHTML = `<button class=unreadStatusButton id=readStatusButton-${i} onclick="myLibrary[${i}].changeReadStatus()">${myLibrary[i].isRead}</button>`;
+        };
+
+        // cell4.innerHTML = `<button class=readStatusButton id=readStatusButton-${i} onclick="myLibrary[${i}].changeReadStatus()">${myLibrary[i].isRead}</button>`;
+        cell5.innerHTML = `<button class=delButtons id=delButton-${i} onclick="removeBook(${i})">&#10006</button>`;
     }
+}
+
+function removeBook(i) {
+    myLibrary.splice(i, 1);
+    render();
 }
 
 function openForm() {
@@ -60,6 +93,24 @@ function closeForm() {
 
     // Show button
     document.getElementById('open-form').style.display = 'block';
+    clearInputs();
+}
+
+function clearInputs() {
+    document.getElementById('author').value = '';
+    document.getElementById('title').value = '';
+    document.getElementById('page-count').value = '';
+
+    document.getElementById('isReadYes').checked = false;
+    document.getElementById('isReadYes').value = '';
+
+    document.getElementById('isReadNo').value = '';
+    document.getElementById('isReadNo').checked = false;
+}
+
+function clearAll() {
+    myLibrary.splice(0, myLibrary.length);
+    render();
 }
 
 render();
